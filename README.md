@@ -12,7 +12,7 @@ Preview
 
 (The image is when I test the game UI customize.)
 
-The demo is also added a sprite class example:
+The demo is also added a sprite class example (I'm added again for those haven't known yet):
 
 ```py
 # The sprite class example
