@@ -1,13 +1,10 @@
-# PyNovel 4.0.0
-PyGame-Novel-Two (NovelPy Two)
+PyNovel 4.0.0
 ==================================================
 The changed or anything you want to see.
 
 Update
 ===================================================
-- [x] Mouse, keyboard
-- [x] Make a new sprite style
-- [ ] Choice
+It's still not had any choice yet since that time...
 
 Preview
 ===================================================
