@@ -18,6 +18,7 @@ class Text:
     def set_font(self):
         "Set the font from its name and size."
         self.font = pygame.font.SysFont(self.fontname, self.fontsize)
+        self.bolded = pygame.font.SysFont(self.fontname, self.fontsize, bold=True)
     
     def render(self, surface, box=True):
         "Render the text into an image."
