@@ -1,0 +1,1 @@
+If novelpy code kind of cheap and bad.

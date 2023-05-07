@@ -1,0 +1,28 @@
+import script.display.graphics as graphics
+
+graphics.pygame.init()
+
+load_sysfont = graphics.pygame.font.SysFont
+load_font = graphics.pygame.font.Font
+        
+def text(text, pos):
+    font = load_sysfont('dejavu-sans', 22)
+    text_surf = font.render(text, True, graphics.pygame.Color('white'))
+    rect = text_surf.get_rect()
+    rect.topleft = pos
+    graphics.screen.blit(text_surf, rect)
+
+
+def _text(text, pos):
+    print('Testing...')
+    return text(text, pos)
+
+def error(text):
+    print('An unlucky exception has been caught.')
+    print('The error is ' + str(e))
+    return
+
+try:
+    script.ui.text = script.display.text
+except Exception as e:
+    error(e)
