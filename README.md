@@ -10,3 +10,8 @@ Text(text_list, pos, surface)
 ui.text(line1, pos, surface)
 ui.say(string, pos, surface, color)
 ```
+
+# Updated.
+At least, I fixed a problem in the old version, I acidentally
+found out while checking my PC. That's clicking error.
+Sorry, everyone.
