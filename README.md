@@ -15,3 +15,7 @@ ui.say(string, pos, surface, color)
 At least, I fixed a problem in the old version, I acidentally
 found out while checking my PC. That's clicking error.
 Sorry, everyone.
+
+# Bug report
+If you found any bug in it, post to https://github.com/pynovel-
+creator/pynovel-4/issues. I will fix it soon.
