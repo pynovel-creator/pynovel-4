@@ -2,6 +2,14 @@
 This version merge 4.1 and 4.2 into one version, so the code will
 be easier for coding.
 
+# 4.1 version.
+The 4.1 version is just a simple test.
+So you don't have to worry about that.
+
+# 4.2 version
+Featuring Girl tell you how to make your
+own game.
+
 ```py
 ## For example, dialogue:
 ## 4.0 version:
