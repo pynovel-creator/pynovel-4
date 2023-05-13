@@ -14,7 +14,7 @@ own game.
 ## For example, dialogue:
 ## 4.0 version:
 Text(text_list, pos, surface)
-##  This one:
+##  The 4.1 version:
 ui.text(line1, pos, surface)
 ui.say(string, pos, surface, color)
 ```
