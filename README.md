@@ -17,5 +17,5 @@ found out while checking my PC. That's clicking error.
 Sorry, everyone.
 
 # Bug report
-If you found any bug in it, post to https://github.com/pynovel-
-creator/pynovel-4/issues. I will fix it soon.
+If you found any bug in it, post to https://github.com/pynovel-creator/pynovel-4/issues. 
+I will fix it soon so you can play it or download the current code.
