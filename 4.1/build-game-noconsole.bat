@@ -11,8 +11,5 @@ del *.spec
 del build\run_game\*
 del build\run_game\localpycs\*
 rmdir build\run_game\localpycs
-echo Y | <command>
 rmdir build\run_game
-echo Y | <command>
 rmdir build 
-echo Y | <command>
