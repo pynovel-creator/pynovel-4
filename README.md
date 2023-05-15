@@ -17,8 +17,8 @@ Text(text_list, pos, surface)
 ##  The 4.1 version:
 ui.text(line1, pos, surface)
 ui.say(string, pos, surface, color)
-##  The 4.1 version:
-name = Sayer("name", color="who_color")
+##  The 4.2 version:
+name = Character("name", color="who_color")
 ui.text(line1, pos, surface)
 ui.say(character_object)
 ```
