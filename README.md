@@ -69,7 +69,7 @@ without load it.
 
 `name`
 
-The file name, the default location is in 'game/'.
+The file name, the default location is in `game/`.
 
 `ui.scene(name, surface)`
 
