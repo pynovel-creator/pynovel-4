@@ -80,8 +80,8 @@ The scene view.
 The key name of the loaded file in `image` dictionary
 or stored a path to the file in string format in 
 `image` dictionary. (If you type color in it,
-you can fill the scene, if you aren't
-call it the screen is red colored.
+you can fill the scene by color, if you aren't
+call it the screen is red colored.)
 
 `surface`
 
