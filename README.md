@@ -150,9 +150,9 @@ Game class
 
 The screen width and height, default is (0, 0).
 
-`config.window_title, config.window_icon=None'
+`config.window_title, config.window_icon=None`
 
-The game title, icon.
+The game title, icon is None.
 
  `config.name, config.version`
  
