@@ -35,7 +35,7 @@ load a character here to say.
 
 `object`
 
-'Character()' object or a string.
+`Character()` object or a string.
 
 `pos`
 
