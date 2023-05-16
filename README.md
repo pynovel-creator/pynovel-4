@@ -14,7 +14,7 @@ image["character name"] = "path/to/your/file.png"
 Loading an image no longer needed the `ui.image()` function.
 Just add it to the screen.
 
-# Some common function.
+# Some common functions.
 
 `Character(name, color)`
 
