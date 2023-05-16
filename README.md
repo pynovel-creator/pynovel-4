@@ -51,7 +51,7 @@ Text of this line. (You may have to multiply them.)
 
 `text`
 
-The line text info.
+This line text info.
 
 `pos`
 
