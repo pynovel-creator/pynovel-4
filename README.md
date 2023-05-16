@@ -47,7 +47,7 @@ The screen will be load.
 
 `ui.text(text, pos, surface)`
 
-Text of the line. (You may have to multiply them.)
+Text of this line. (You may have to multiply them.)
 
 `text`
 
