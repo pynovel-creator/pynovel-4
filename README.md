@@ -5,7 +5,7 @@ happened and rewrite the demo.
 
 # Preview.
 Here's a preview of the new feature.
-![link](movie_preview.png)
+![link](preview.webm)
 
 
 # Bug report
