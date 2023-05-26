@@ -1,61 +1,33 @@
 from script import *
-import sys, time, traceback, os
+import sys, traceback
 
-class ExceptionScene(screen.Scene):
-    
-    def __init__(self):
-        super().__init__()
-        os.startfile("traceback.txt")
-
-    def update(self):
-        pass
-    
-    def draw(self, surface):
-        ui.text("I'm sorry but we caught an unexpected exception has occured.", (20, 0), surface)
-
-exec(open('game/script.py').read())            
-
+exec(open('game/script.py').read())
+        
 class App:
 
     def __init__(self):
         pygame.init()
-        
-        try:
-            self.scene = start_scene()
-            if os.path.exists("traceback.txt"):
-                os.remove("traceback.txt")
-        except:
-            traceback.print_exc(file=open("traceback.txt", 'w'))
-            self.scene = ExceptionScene()
-            open_script('script.py')
-        
-        config.screen_width = 800
-        config.screen_height = 600
-        
-        config.window_title = "Test Game"
-        
+        self.running = None
+        self.scene = start_scene()
         self.screen = pygame.display.set_mode((config.screen_width, config.screen_height))
         
         pygame.display.set_caption(config.window_title)
-        
-        config.clock_tick = 60
+
 
     def events(self):
         for event in pygame.event.get():
             
             if event.type == QUIT:
                 self.scene.terminate()
-                pygame.quit()
-                sys.exit()
+                quit()
                 
             if event.type == KEYDOWN:
-                if event.key in screen.quit_key:
+                if event.key in quit_key:
                     self.scene.terminate()
-                    pygame.quit()
-                    sys.exit()
-                if event.key in screen.editor_key:
+                    quit()
+                if event.key in editor_key:
                     open_script('script.py')
-                if event.key in screen.fullscreen_key:
+                if event.key in fullscreen_key:
                     pygame.display.toggle_fullscreen()
                     fullscreen = True
 
@@ -65,29 +37,24 @@ class App:
                 self.scene.mouse_events(event)
 
     def draw(self):
-        self.screen.fill((255, 0, 0))
+        scene('black', self.screen)
         config.clock.tick(config.clock_tick)
+        self.scene.update()
+        self.scene.draw(self.screen)
+        self.scene = self.scene.next_scene
+
+    def running_game(self):
+        self.running = True
+
         try:
-            self.scene.update()
-            self.scene.draw(self.screen)
-            self.scene = self.scene.next_scene
-        except:
-            traceback.print_exc(file=open("traceback.txt", 'w'))
-            self.scene = ExceptionScene()            
-            self.scene.update()
-            self.scene.draw(self.screen)
-            self.scene = self.scene.next_scene        
-    def running(self):
-        running = True
-        
-        while running:
+            while self.running:
 
-            print(self.screen)
-
-            self.draw()
-            self.events()   
+                self.draw()
+                self.events()   
             
-            pygame.display.flip()
+                pygame.display.flip()
+        except:
+            traceback.print_exc()
 
 if __name__ == "__main__":
-    App().running()
+    App().running_game()

@@ -1,19 +1,8 @@
-image["bg night meadow"] = "night_meadow.jpg"
+images["bg night meadow"] = "night_meadow.jpg"
+images["girl happy"] = "girl_normal.png"
+images["girl upset"] = "girl_upset.png"
 
-image["girl happy"] = "girl_normal.png"
-image["girl upset"] = "girl_upset.png"
-
-def music_start(file, loops=-1):
-    # Ensure that's in game/ directory
-    return audio.audio.play(file, -1)
-
-def music_stop():
-    return audio.audio.stop()
-
-ui.get_image_list()
-
-# For the example, reveal girl's name here.
-# I won't answer any questions about Lily.
+movies["test mode"] = "bigbuckbunny.mp4"
 
 g = Character("Lily", color=(255, 0, 0, 0))
 
@@ -29,12 +18,12 @@ class start_scene(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("white", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("I'm Girl. Welcome to the default scene of this game. The script", (20, 470), surface)
-        ui.text("is game/script.py. Press 'E' or 'SHIFT' to open it.", (20, 490), surface)
-        ui.say("Girl", surface, (20, 440))
+        scene("white", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("I'm Lily. Welcome to the default scene of this game. The script", (20, 470), surface)
+        text("is game/script.py. Press 'E' or 'SHIFT' to open it.", (20, 490), surface)
+        say("Girl", surface, (20, 440))
 
 class goto(screen.Scene):
     
@@ -48,11 +37,11 @@ class goto(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("I can demonstrate you some features now.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("I can demonstrate you some features now.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_2(screen.Scene):
     
@@ -70,11 +59,11 @@ class goto_2(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface, 'left')
-        ui.box_appear(surface)
-        ui.text("I can move to left.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface, 'left')
+        box_appear(surface)
+        text("I can move to left.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 
 class goto_3(screen.Scene):
@@ -89,11 +78,11 @@ class goto_3(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface, 'right')
-        ui.box_appear(surface)
-        ui.text("..or right...", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface, 'right')
+        box_appear(surface)
+        text("..or right...", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_4(screen.Scene):
     
@@ -107,11 +96,11 @@ class goto_4(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("And return to the default position.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("And return to the default position.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 
 class goto_5(screen.Scene):
@@ -126,11 +115,11 @@ class goto_5(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("And return to the default position.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("And return to the default position.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_5(screen.Scene):
     
@@ -145,11 +134,11 @@ class goto_5(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("I can play a music.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("I can play a music.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_6(screen.Scene):
     
@@ -164,11 +153,11 @@ class goto_6(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("I can stop it..", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("I can stop it..", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_7(screen.Scene):
     
@@ -181,10 +170,10 @@ class goto_7(screen.Scene):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.box_appear(surface)
-        ui.text("I can going off the screen by unshow me.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        box_appear(surface)
+        text("I can going off the screen by unshow me.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
 class goto_last(screen.Scene):
     
@@ -192,37 +181,63 @@ class goto_last(screen.Scene):
         super().__init__()
 
     def enter_next_scene(self):
-        self.next_scene = end_scene()
+        self.next_scene = video_start_scene()
         
     def update(self):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        ui.text("Don't worry about me, I'm not gone anywhere now.", (20, 470), surface)
-        ui.say(g, surface, (20, 440))
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("Don't worry about me, I'm not gone anywhere now.", (20, 470), surface)
+        say(g, surface, (20, 440))
 
-class end_scene(screen.Scene):
+class video_start_scene(screen.Scene):
     
     def __init__(self):
         super().__init__()
-        self.button = None
 
-    def mouse_events(self, event):
-        self.next_scene = self.button.events(event)
-        if self.next_scene == None:
-            self.next_scene = self
+    def enter_next_scene(self):
+        self.next_scene = movie_scene()
         
     def update(self):
         pass
     
     def draw(self, surface):
-        ui.scene("bg night meadow", surface)
-        ui.show('girl happy', surface)
-        ui.box_appear(surface)
-        self.button = ui.textbutton("Return", (20, 470), surface, start_scene)
-        ui.text("Thank you for playing, you can try modify the game.", (20, 440), surface)
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        if exists('bigbuckbunny.mp4'):
+            text("We also supported movie playing, let me play it now.", (20, 470), surface)
+        else:
+            text("We also supported movie playing, but you haven't add a 'file.mp4'", (20, 470), surface)
+            text("here, so I can't demonstrate it here.", (20, 490), surface)
+        say(g, surface, (20, 440))
+
+class movie_scene(screen.Scene):
+    
+    def __init__(self):
+        super().__init__()
+        movie_start("test mode")
+
+    def mouse_events(self, event):
+        if self.return_button.events is not None:
+            self.next_scene = self.return_button.events(event)
+        else:
+            quit()
+
+    def enter_next_scene(self):
+        pass
+        
+    def update(self):
+        pass
+
+    def draw(self, surface):
+        scene("bg night meadow", surface)
+        show('girl happy', surface)
+        box_appear(surface)
+        text("That's enough for now. Do you want to restart?", (20, 440), surface)
+        self.return_button = ui.textbutton("Return", (20, 470), surface, start_scene)
 
 

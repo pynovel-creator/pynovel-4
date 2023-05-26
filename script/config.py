@@ -1,11 +1,11 @@
 import script
 
-# Hide the mouse so we can change the cursor to an image.
-mouse_visible = True
+# This isn't necessary.
+#mouse_visible = True
 
 # The screen resolution.
-screen_width = 0
-screen_height = 0
+screen_width = 800
+screen_height = 600
 
 # The program.
 name = 'Untitled'

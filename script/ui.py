@@ -5,4 +5,3 @@ _say = say
 _image = image
 _show = show
 _scene = scene
-_position = position

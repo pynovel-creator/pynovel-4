@@ -1,5 +1,5 @@
 import pygame, time
-from script import image as _image
+from script import images
 from script.config import *
 from script.screen import choice_key
 pygame.init()
@@ -7,17 +7,12 @@ pygame.init()
 font = pygame.font.SysFont('bitstreamverasans', 22)
 fontb = pygame.font.SysFont('bitstreamverasans', 22, True)
 
-pos = pygame.mouse.get_pos()
-
-left_button = pygame.mouse.get_pressed()[0]
-right_button = pygame.mouse.get_pressed()[2]
-
-_image["box image"] = "frame.png"
+images["box image"] = "frame.png"
 
 def get_image_list():
     global _image
-    images = list(_image.values())
-    return print('Stored: ' + str(images))
+    image_files = list(images.values())
+    return print('Stored: ' + str(image_files))
     
 def error_text(text, surface):
     global font
@@ -69,40 +64,40 @@ def say(object, surface, pos, antialias=True):
 def scene(name, surface):
     try:
         try:
-            surface.blit(_image[name], (0, 0))
+            surface.blit(image[name], (0, 0))
         except:
-            surface.blit(image(_image[name]), (0, 0))
+            surface.blit(image(images[name]), (0, 0))
     except:
         surface.fill(name)
 
+left = [screen_width/4, screen_height/2]
+center = [screen_width/2, screen_height/2]
+right = [screen_width-200, screen_height/2]
+box_image = [screen_width/2, screen_height-85]
+
 def show(name, surface, pos='center'):
-    position()
+    global left, right, center, box_image
     try:
         try:
-            name_rect = _image[name].get_rect()
-            name_rect.center = eval("position.%s" % pos)
-            surface.blit(_image[name], name_rect)
+            name_rect = images[name].get_rect()
+            name_rect.center = eval(pos)
+            surface.blit(images[name], name_rect)
         except:
-            name_surf = image(_image[name])
+            name_surf = image(images[name])
             name_rect = name_surf.get_rect()
-            name_rect.center = eval("position.%s" % pos)
+            name_rect.center = eval(pos)
             surface.blit(name_surf, name_rect)            
     except:
         error_text("Image '%s' isn't found while loading." % name, surface)
         
-def position():
-    position.left = [200, 300]
-    position.center = [400, 300]
-    position.right = [600, 300]
-    position.box_image = [400, 515]
-
-def null():
-    pass
 
 class textbutton:
     
-    def __init__(self, text, pos, surface, action=null):
-        self.action = action()
+    def __init__(self, text, pos, surface, action):
+        try:
+            self.action = action()
+        except:
+            self.action = action
         self.surface = surface
         self.pos = pos
         self.color = (0, 255, 255)
@@ -126,5 +121,3 @@ class textbutton:
         if event.button in choice_key:
             if self.button_text_rect.collidepoint(event.pos):
                 return self.action
-
-            
