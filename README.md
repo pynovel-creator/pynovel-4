@@ -5,7 +5,7 @@ happened and rewrite the demo.
 
 # Preview.
 Here's a preview of the new feature.
-![link](preview.webm)
+![link](preview.gif)
 
 
 # Bug report
