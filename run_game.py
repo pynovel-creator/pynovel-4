@@ -1,16 +1,19 @@
 from script import *
-import sys, traceback
+import sys, traceback, codecs
 
-exec(open('game/script.py').read())
+init()
+
+file = open(pathjoin('game', 'script.py')).read()
+exec(file)
+
+config.is_lastest_version()
         
 class App:
 
     def __init__(self):
-        pygame.init()
         self.running = None
         self.scene = start_scene()
         self.screen = pygame.display.set_mode((config.screen_width, config.screen_height))
-        
         pygame.display.set_caption(config.window_title)
 
 
@@ -25,11 +28,6 @@ class App:
                 if event.key in quit_key:
                     self.scene.terminate()
                     quit()
-                if event.key in editor_key:
-                    open_script('script.py')
-                if event.key in fullscreen_key:
-                    pygame.display.toggle_fullscreen()
-                    fullscreen = True
 
                 self.scene.events(event)
                 
@@ -57,4 +55,21 @@ class App:
             traceback.print_exc()
 
 if __name__ == "__main__":
-    App().running_game()
+    try:
+         game = App()
+         game_parser = game.running_game()
+    except Exception as e:
+         f = open('traceback.txt', 'w')
+         print("I'm found an error while executing your script.py file, the error", file=f)
+         print("made the game has stopped working.", file=f) 
+         print(file=f)
+         type, value, tb = sys.exc_info()
+         print(type.__name__ + ":", f)
+         traceback.print_exc(None, f)
+         print(file=f)
+         print("-------------------------------------- Begin traceback info --------------------------------------", file=f)
+         traceback.print_exc(None, f)
+         print(file=f)
+         print('Game version : %s.%s.%s' % config.game_ver, file=f)
+         f.close()
+         os.system("traceback.txt")

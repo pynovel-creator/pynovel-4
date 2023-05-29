@@ -52,13 +52,16 @@ def say(object, surface, pos, antialias=True):
 
     try:
     	button_text = fontb.render(object.name, antialias, object.color)
-    	button_text_rect = button_text.get_rect()
-    	button_text_rect.topleft = pos
+    	button_text_shadow = fontb.render(object.name, True, (0, 0, 0))
     except:
     	button_text = fontb.render(object+":", antialias, (255, 255, 255))
-    	button_text_rect = button_text.get_rect()
-    	button_text_rect.topleft = pos
+    	button_text_shadow = fontb.render(object+":", True, (0, 0, 0))
 
+    button_text_rect = button_text.get_rect()
+    button_text_rect.topleft = pos
+    button_text_shadow_rect = button_text.get_rect()
+    button_text_shadow_rect.topleft = [pos[0]+2, pos[1]+2]
+    surface.blit(button_text_shadow, button_text_shadow_rect)
     surface.blit(button_text, button_text_rect)
 
 def scene(name, surface):

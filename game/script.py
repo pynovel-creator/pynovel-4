@@ -1,10 +1,16 @@
 images["bg night meadow"] = "night_meadow.jpg"
+    
 images["girl happy"] = "girl_normal.png"
+images["girl sad"] = "girl_sad.png"
 images["girl upset"] = "girl_upset.png"
+images["girl blushed"] = "girl_blushed.png"
 
 movies["test mode"] = "bigbuckbunny.mp4"
 
 g = Character("Lily", color=(255, 0, 0, 0))
+
+config.window_title = "New Game"
+config.game_ver = (4, 3, 2)
 
 class start_scene(screen.Scene):
     
@@ -22,7 +28,7 @@ class start_scene(screen.Scene):
         show('girl happy', surface)
         box_appear(surface)
         text("I'm Lily. Welcome to the default scene of this game. The script", (20, 470), surface)
-        text("is game/script.py. Press 'E' or 'SHIFT' to open it.", (20, 490), surface)
+        text("is game/script.py, open it in a text-editor.", (20, 490), surface)
         say("Girl", surface, (20, 440))
 
 class goto(screen.Scene):
@@ -181,7 +187,7 @@ class goto_last(screen.Scene):
         super().__init__()
 
     def enter_next_scene(self):
-        self.next_scene = video_start_scene()
+        self.next_scene = movie_start_scene()
         
     def update(self):
         pass
@@ -193,7 +199,7 @@ class goto_last(screen.Scene):
         text("Don't worry about me, I'm not gone anywhere now.", (20, 470), surface)
         say(g, surface, (20, 440))
 
-class video_start_scene(screen.Scene):
+class movie_start_scene(screen.Scene):
     
     def __init__(self):
         super().__init__()
@@ -224,11 +230,10 @@ class movie_scene(screen.Scene):
     def mouse_events(self, event):
         if self.return_button.events is not None:
             self.next_scene = self.return_button.events(event)
+        if self.end_button.events is not None:
+            self.end_button.events(event)
         else:
-            quit()
-
-    def enter_next_scene(self):
-        pass
+            self.terminate()
         
     def update(self):
         pass
@@ -238,6 +243,7 @@ class movie_scene(screen.Scene):
         show('girl happy', surface)
         box_appear(surface)
         text("That's enough for now. Do you want to restart?", (20, 440), surface)
-        self.return_button = ui.textbutton("Return", (20, 470), surface, start_scene)
+        self.return_button = ui.textbutton("Okay", (20, 470), surface, start_scene)
+        self.end_button = ui.textbutton("Stop", (20, 490), surface, start_scene)
 
 

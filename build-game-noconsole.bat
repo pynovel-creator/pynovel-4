@@ -1,3 +1,4 @@
+@echo off
 pyinstaller --onefile --windowed run_game.py
 md "%cd%\dist\game"
 copy "%cd%\game" "%cd%\dist\game\*"
@@ -12,4 +13,5 @@ del build\run_game\*
 del build\run_game\localpycs\*
 rmdir build\run_game\localpycs
 rmdir build\run_game
-rmdir build 
+rmdir build
+copy "%cd%\*.py" "%cd%\dist\*.py"

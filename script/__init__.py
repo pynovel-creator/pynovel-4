@@ -40,9 +40,6 @@ def music_start(file, loops=-1):
 def music_stop():
     return audio.audio.stop()
 
-def open_script(file):
-    return subprocess.Popen("C:/Users/ntien/AppData/Local/Programs/Python/Python37/pythonw.exe C:/Users/ntien/AppData/Local/Programs/Python/Python37/Lib/idlelib/idle.pyw game/" + file, shell=True)
-
 class Character:
 
     def __init__(self, name, color):
@@ -76,6 +73,17 @@ def exists(filename):
             return True
         else:
             return False
+
+def file(filename, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None):
+    return open(filename, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+
+def pathjoin(a, *p):
+    path = a
+
+    for b in p:
+        path += '/' + b
+
+    return path
 
 def init():
     pygame.init()

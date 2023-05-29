@@ -4,11 +4,10 @@ from script.config import *
 
 class Movie:
 
-    # This is muted.
-
     def __init__(self, filename):
-        self.video = moviepy.editor.VideoFileClip('game/' + filename).resize((screen_width, screen_height))
+        self.video = moviepy.editor.VideoFileClip('game/' + filename)
         self.video = self.video.resize((screen_width, screen_height))
+        self.video = self.video.set_fps(clock_tick)
         self.end = False
 
     def play(self):
