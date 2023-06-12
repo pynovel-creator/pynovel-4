@@ -10,6 +10,8 @@ pygame.image.load().
 Move the demo to demo/ directory, and outside
 it, there's a make.py.
 
+(This version will only have source code.)
+
 # Make template
 
 Go to command line, then type:
