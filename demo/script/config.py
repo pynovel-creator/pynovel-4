@@ -16,6 +16,9 @@ window_icon = None
 clock = script.pygame.time.Clock()
 clock_tick = 0
 
+# Activate sound
+click_sound = 'script/display/click.wav'
+
 # Script version.
 game_script_version = (4, 3, 2)
 game_ver = (4, 3, 2)

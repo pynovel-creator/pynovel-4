@@ -26,7 +26,7 @@ from script.ui import *
 
 # Configuration.
 import script.config
-from script.screen import *
+from script.render import *
 
 # Movie
 import script.movie

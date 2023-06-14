@@ -7,15 +7,15 @@ file = open(pathjoin('game', 'script.py')).read()
 exec(file)
 
 config.is_lastest_version()
-        
+config.window_title = "New Game"
+    
 class App:
 
     def __init__(self):
         self.running = None
         self.scene = start_scene()
-        self.screen = pygame.display.set_mode((config.screen_width, config.screen_height))
-        pygame.display.set_caption(config.window_title)
-
+        self.screen = makescreen()
+        pygame.display.set_caption(window_title)
 
     def events(self):
         for event in pygame.event.get():
@@ -35,10 +35,10 @@ class App:
                 self.scene.mouse_events(event)
 
     def draw(self):
-        scene('black', self.screen)
+        scene('black')
         config.clock.tick(config.clock_tick)
         self.scene.update()
-        self.scene.draw(self.screen)
+        self.scene.draw()
         self.scene = self.scene.next_scene
 
     def running_game(self):
@@ -47,8 +47,8 @@ class App:
         try:
             while self.running:
 
-                self.draw()
-                self.events()   
+                self.events() 
+                self.draw()  
             
                 pygame.display.flip()
         except:

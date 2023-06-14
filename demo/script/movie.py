@@ -1,6 +1,7 @@
 import moviepy.editor
 import pygame
 from script.config import *
+pygame.init()
 
 class Movie:
 
