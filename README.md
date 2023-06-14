@@ -10,4 +10,4 @@ instead of various file from demo.
 
 # Bug report
 If you found any bug in it, post to https://github.com/pynovel-creator/pynovel-4/issues. 
-I will fix it soon so you can play it or download the current 
+I will fix it soon so you can play it or download the current code instead.
