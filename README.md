@@ -1,13 +1,16 @@
-# Huge updated!
+# Huge update
 
-- Rewrite textbutton code
+Now we have a launcher window, just choose which
+game in the options and choose it to launch the
+game (using subprocess with shell=True).
 
-- Added a ui.input() function, a test function used
-for let the player enter some text.
+The script folder has been moved to the launcher
+base, the game has been launched using code from
+script/ folder in the base instead.
 
-- make.py now clone the template from the my account
-instead of various file from demo.
+(I just noticed the 800x600 pygame window appear
+with 'MoviePy' title and filled with black color
+and closed after opened in pyinstaller command.)
 
-# Bug report
-If you found any bug in it, post to https://github.com/pynovel-creator/pynovel-4/issues. 
-I will fix it soon so you can play it or download the current code instead.
+# bug report 
+This has been appeared a lot I will skip it.
