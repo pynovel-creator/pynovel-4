@@ -12,5 +12,9 @@ script/ folder in the base instead.
 with 'MoviePy' title and filled with black color
 and closed after opened in pyinstaller command.)
 
+# Annoucement
+I found error here so I will replace the entire 
+files.
+
 # bug report 
 This has been appeared a lot I will skip it.
