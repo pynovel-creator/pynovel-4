@@ -16,8 +16,8 @@ and closed after opened in pyinstaller command.)
 I found error here so I will replace the entire 
 files.
 
-# List
-[x] Replaced files.
+# Checking errors
+- [x] Replaced error files                                  
 
 # bug report 
 This has been appeared a lot I will skip it.
