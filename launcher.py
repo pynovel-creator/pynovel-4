@@ -18,21 +18,23 @@ while True:
             quit()
         
         if event.type == MOUSEBUTTONDOWN:
-            for option in run_text:
+            for option in buttons:
                 if option[0].events(event) is not None:
-                    subprocess.run("cd %s & run_game.py" % option[1].split("/run_game.py")[0], shell=True)
+                    if os.path.exists(option[1]):
+                        subprocess.run("cd %s & run_game.py" % option[1].split("/run_game.py")[0], shell=True)
+                    else:
+                        print("%s was not found while launching the game please\n" 
+                              "download a new one instead." % option[1])
                     
 
-    run_text = []
-
+    left, top = (100, 151)
+    buttons = [] 
     for folder in os.listdir('.'):
-        x, y = center
-        if os.path.exists(pathjoin(folder, 'game')):
-            if folder == "demo":
-                run_text.append([ ctextbutton("Launch Tutorial/Demo", (x, y)), pathjoin(folder, "run_game.py") ])
-            else:
-                run_text.append([ ctextbutton(folder, (x, y)), pathjoin(folder, "run_game.py") ])
-            y += 30
+        if os.path.isdir(folder + '/game'):
+            f = open(folder + '/project.py').read()
+            exec(f)
+            buttons.append([ ctextbutton(info["project_name"] + " (" + info["project_version"] + ")", (left, top)), folder + '/run_game.py' ])
+            top += 30
     text("Please select the game you may want to launch. The new game\n"
          "will open in a new window to avoid errors.", (20, 0))
 

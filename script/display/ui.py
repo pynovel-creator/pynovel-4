@@ -104,7 +104,7 @@ class textbutton:
         self.draw()
 
     def render(self):
-        self.button_text = font.render(self.text, True, (200, 255, 255))
+        self.button_text = font.render(self.text, True, (255, 255, 255))
         self.idle_background = pygame.Rect(0, 0, int(0.75 * screen_width), self.button_text.get_height())
         self.idle_background.center = self.pos
         
@@ -125,7 +125,7 @@ class textbutton:
 
 class ctextbutton:
 
-    # This will make the button frame size as same as text.
+    # This is used in the launcher.
     
     def __init__(self, text, pos=center): 
         self.surface = screen
@@ -139,7 +139,7 @@ class ctextbutton:
         self.draw()
 
     def render(self):
-        self.button_text = font.render(self.text, True, (200, 255, 255))
+        self.button_text = font.render("      %s" % self.text, True, (255, 255, 255))
         self.idle_background = pygame.Rect(0, 0, self.button_text.get_width()+50, self.button_text.get_height())
         self.idle_background.center = self.pos
         
@@ -147,9 +147,9 @@ class ctextbutton:
         self.button_text_rect = self.button_text.get_rect()
         self.button_text_rect.center = self.pos
         if self.idle_background.collidepoint(pygame.mouse.get_pos()):
-            pygame.draw.rect(self.surface, (0, 60, 180), self.idle_background, 0, 12)
+            drawbox(pygame.Color("darkblue"), (255, 255, 255), self.idle_background, 3, 16)
         else:
-            pygame.draw.rect(self.surface, (0, 60, 120), self.idle_background, 0, 12)
+            drawbox(pygame.Color("blue"), (255, 255, 255), self.idle_background, 3, 16)
         self.surface.blit(self.button_text, self.button_text_rect)
 
     def events(self, event):
